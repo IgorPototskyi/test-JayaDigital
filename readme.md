@@ -2,7 +2,10 @@
 
 <h3>1. SASS код для респонсивной сетки как у Bootstrap.</h3>
 
-<p>[Sass файл](https://github.com/IgorPototskyi/test-JayaDigital/app/sass/_grid.sass)</p>
+<p>
+	<a href="https://github.com/IgorPototskyi/test-JayaDigital/blob/master/app/sass/_grid.sass"
+	   target="_blank">Sass файл</a>
+</p>
 
 <p>
 	Максимальное количество колонок - 60. Соответственно, чтобы получить 
@@ -19,11 +22,16 @@
 <p>
 	Breakpoints: 
 	<ul>
-		<li>xl : 1500px</li>
-		<li>lg : 1200px</li>
-		<li>md : 960px</li>
-		<li>sm : 720px</li>
-		<li>xs : 480px</li>
+		<li>xl : max 1500px</li>
+		<li>lg : max 1200px</li>
+		<li>md : max 960px</li>
+		<li>sm : max 720px</li>
+		<li>xs : max 480px</li>
 	</ul>
+</p>
+
+<p>
+	<a href="https://igorpototskyi.github.io/test-JayaDigital/app/"
+	   target="_blank">Пример</a>
 </p>
 
