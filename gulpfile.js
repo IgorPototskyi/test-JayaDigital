@@ -45,15 +45,27 @@ gulp.task('browser-sync', function() {
 	});
 });
 
-gulp.task('sass', function() {
-	return gulp.src('app/sass/**/*.sass')
-	.pipe(sass({outputStyle: 'expand'}).on("error", notify.onError()))
-	.pipe(rename({suffix: '.min', prefix : ''}))
-	.pipe(autoprefixer(['last 15 versions']))
-	.pipe(cleanCSS()) // Опционально, закомментировать при отладке
-	.pipe(gulp.dest('app/css'))
-	.pipe(browserSync.reload({stream: true}));
-});
+// gulp.task('sass', function() {
+// 	return gulp.src('app/sass/**/*.sass')
+// 	.pipe(sass({outputStyle: 'expand'}).on("error", notify.onError()))
+// 	.pipe(rename({suffix: '.min', prefix : ''}))
+// 	.pipe(autoprefixer(['last 15 versions']))
+// 	.pipe(cleanCSS()) // Опционально, закомментировать при отладке
+// 	.pipe(gulp.dest('app/css'))
+// 	.pipe(browserSync.reload({stream: true}));
+// });
+
+gulp.task('sass', () => {
+    return setTimeout(() => {
+		return gulp.src('app/sass/**/*.sass')
+		.pipe(sass({outputStyle: 'expand'}).on("error", notify.onError()))
+		.pipe(rename({suffix: '.min', prefix : ''}))
+		.pipe(autoprefixer(['last 15 versions']))
+		// .pipe(cleanCSS()) // Опционально, закомментировать при отладке
+		.pipe(gulp.dest('app/css'))
+		.pipe(browserSync.reload({stream: true}));
+	}, 500)
+})
 
 gulp.task('watch', ['sass', 'js', 'browser-sync'], function() {
 	gulp.watch('app/sass/**/*.sass', ['sass']);
