@@ -2,12 +2,11 @@
 
     $.fn.parallax = function(options) {
         var speed = options.speed;
-        if (!!speed && speed > 5) options.speed = 5;
-        if (!!speed && speed < 1) options.speed = 1;
 
-        var settings = $.extend({
-            "speed" : "3"
-        }, options);
+        if (!!speed) {
+            if (speed > 5) speed = 5;
+            if (speed < 1) speed = 1;
+        } else speed = 3;
 
         return this.each(function() {
             var $self = $(this);
@@ -33,24 +32,13 @@
                 var pBottom = pTop + pHeight;
 
                 if (scrollTop >= distToP && scrollTop <= pBottom) {
-                    console.log(scrollBottom);
                     $parallaxImage.css({
-                        "transform" : "translate3d(0px, " + scrollBottom * settings.speed / 100 + "%, 0px)"
-                         
+                        "transform" : "translate3d(0px, " + scrollBottom * speed / 100 + "%, 0px)"
                     });
-                }
-                    
+                }     
             }
 
-            $(window).on('scroll', function() {
-                parallaxInit();
-            });
-
-            $(window).on('load', function() {
-                parallaxInit();
-            });
-
-            $('*').on('resize', function() {
+            $(window).bind('scroll load resize', function() {
                 parallaxInit();
             });
         });
