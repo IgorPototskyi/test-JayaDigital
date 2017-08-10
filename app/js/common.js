@@ -1,5 +1,7 @@
 $(function() {
 
-	// Custom JS
+	$('.parallax').parallax({
+		"speed" : "3" 
+	});	
 
 });

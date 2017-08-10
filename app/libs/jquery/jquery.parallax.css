@@ -1,0 +1,18 @@
+.parallax {
+    position: relative;
+    /* min-height: 200px; */
+    overflow: hidden;
+}
+
+.parallax__content {
+    position: relative;
+    z-index: 1
+}
+
+.parallax__image {
+    position: absolute;
+    top: 0;
+    width: 100%;
+    background-size: cover;
+    background-position: top;
+}
